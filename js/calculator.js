@@ -12,8 +12,14 @@ document.getElementById('dot').addEventListener('click', function() {
     outputData('.');
 });
 document.getElementById('equle').addEventListener('click', function() {
-    let result = eval(document.getElementById('output').value);
-    document.getElementById('output').value = result;
+    try {
+        let result = eval(document.getElementById('output').value);
+        document.getElementById('output').value = result;
+    } catch {
+        alert('Somthing wrang please try again');
+        document.getElementById('output').value = "";
+    }
+
 
 });
 document.getElementById('one').addEventListener('click', function() {
@@ -59,6 +65,8 @@ document.getElementById('modulas').addEventListener('click', function() {
     outputData('%');
 });
 document.getElementById('del').addEventListener('click', function() {
+
     const outPut = document.getElementById('output');
     outPut.value = outPut.value.slice(0, -1);
+
 });
